@@ -38,37 +38,37 @@ El proposito de este paso es configurar MediaWiki, generar el archivo de configu
   ```
 
 
-## Paso 2: Activate Semantic MediaWiki
+## Paso 2: Activar Semantic MediaWiki y PageForms
 
-This section follows the install guideline of [Semantic MediaWiki][1] at their [guide][2].
+Esta sección simplifica y sigue los pasos de instalacion de Semantic Mediawiki.
 
-* Stop the running container
+* Pare la ejecución del container
 
   ```
   :> docker-compose stop
   ```
 
-* Append `enableSemantics()` to the end of `LocalSettings.php`
+* Agrugue al final del archivo `LocalSettings.php` las siguientes linea:
 
   ```
-  :> echo "enableSemantics();" >> LocalSettings.php
+  enableSemantics("taller");
+  wfLoadExtension( 'PageForms' );
   ```
-  _Note:_ as this is a proof-of-concept, the host parameter to `enableSemantics()` is empty. (According
-  to [3] this shouldn't be a problem.) 
+  _Nota:_ el valor entre comillsa de la instruccion enableSemantics() debe ser el nombre que eligió para su wiki. Si queda vacío no deberia ser un problema. 
   
-* Start the configured Semantic MediaWiki
+* Inicie la Semantic MediaWiki que ha configurado
 
   ```
   :> docker-compose start
   ```
 
-* Run `update.php`
+* Ejecute `update.php`
  
   ```
-  :> docker-compose exec smw php maintenance/update.php
+  :> docker-compose exec smwpf php maintenance/update.php
   ```  
 
-* Test your vanilla SMW  at http://localhost:8081
+* Testee su SMW  en http://localhost:8081
     
 
 [1]: https://www.semantic-mediawiki.org
