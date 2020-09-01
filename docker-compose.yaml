@@ -1,0 +1,22 @@
+version: '3'
+services:
+  smw:
+    build: 
+      context: .
+      dockerfile: dockerfile
+    image: semantic-mediawiki
+    ports:
+      # make the wiki avaialable at http://localhost:8081
+      - 8081:80
+    volumes:
+      - wiki-images:/var/www/html/images
+      - wiki-db:/var/www/data
+      # After initial setup, download LocalSettings.php to the same directory as
+      # this yaml and uncomment the following line and use compose to restart
+      # the mediawiki service
+      #- ./LocalSettings.php:/var/www/html/LocalSettings.php:ro
+volumes:
+  wiki-images:
+  wiki-db:
+
+      
