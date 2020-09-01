@@ -4,7 +4,7 @@ Configuración de docker para tener una SMW con Page form y algún otro plugin p
 
 # Semantic MediaWiki
 
-Crea e inicia una imagen de Docker que contiene Semantic Mediawiki
+Crea e inicia una imagen de Docker que contiene Semantic Mediawiki y PageForms
 
 
 ## Paso 1: Obtener MediaWiki y configurarla
