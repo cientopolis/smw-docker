@@ -1,6 +1,6 @@
 version: '3'
 services:
-  smw:
+  smwpf:
     build: 
       context: .
       dockerfile: dockerfile
@@ -11,12 +11,15 @@ services:
     volumes:
       - wiki-images:/var/www/html/images
       - wiki-db:/var/www/data
-      # After initial setup, download LocalSettings.php to the same directory as
-      # this yaml and uncomment the following line and use compose to restart
-      # the mediawiki service
-      #- ./LocalSettings.php:/var/www/html/LocalSettings.php:ro
+      # Luego del setup inicial, descargar el LocalSettings.php al mismo directorio
+      # donde se encuentra este archivo yaml, y descomente la siguiente linea 
+      # y use el comando compose para iniciarl el servicio
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php:ro
 volumes:
   wiki-images:
   wiki-db:
+
+      
+
 
       
