@@ -14,7 +14,7 @@ services:
       # Luego del setup inicial, descargar el LocalSettings.php al mismo directorio
       # donde se encuentra este archivo yaml, y descomente la siguiente linea 
       # y use el comando compose para iniciarl el servicio
-      - ./LocalSettings.php:/var/www/html/LocalSettings.php:ro
+      #- ./LocalSettings.php:/var/www/html/LocalSettings.php:ro
 volumes:
   wiki-images:
   wiki-db:
