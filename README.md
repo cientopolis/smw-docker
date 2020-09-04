@@ -65,7 +65,7 @@ Esta sección simplifica y sigue los pasos de instalacion de Semantic Mediawiki.
 * Ejecute `update.php`
  
   ```
-  :> docker-compose exec smw php maintenance/update.php
+  :> docker-compose exec smwpf php maintenance/update.php
   ```  
 
 * Testee su SMW  en http://localhost:8081
